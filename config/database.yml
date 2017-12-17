@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: sm1044mt
+  host: localhost
+
+development:
+  <<: *default
+  database: filmArchive_development
+
+test:
+  <<: *default
+  database: filmArchive_test
+
+production:
+  <<: *default
+  database: filmArchive_production
+  username: filmArchive
+  password: <%= ENV['FILMARCHIVE_DATABASE_PASSWORD'] %>
