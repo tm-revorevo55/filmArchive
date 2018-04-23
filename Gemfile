@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.1'
+# Ruby2.3.3
+gem 'rails', '~> 5.1.4'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -15,12 +16,11 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'  # ユーザ管理
 gem 'rails-i18n'  # 日本語辞書
-gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'  # パスワードの暗号化
+gem 'bcrypt-ruby' # パスワードのハッシュ化
+gem 'faker' # サンプルデータ生成　　
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
 end
 
 group :development do

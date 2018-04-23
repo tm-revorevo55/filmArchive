@@ -1,0 +1,33 @@
+<% @title = "映画一覧画面" %>
+<section class="search-result">
+  <header>
+    <h1 class="h3">映画一覧</h1>
+  </header>
+  <% if @films.present? %>
+    <%= render partial: "pager",
+               locals: {page: @page} %>
+  <% end %>
+  <ol class="list-group">
+    <% @films.each do |film| %>
+      <li class="list-group-item clearfix">
+        <span class="pull-top"><img height="120" width="120" alt="ラベルが入ります"/></span>
+        <h2 class="h3">
+          <%= film.name %>
+        </h2>
+        <h3 class="h4">
+          <small>監督：<%= film.director %></small>
+        </h3>
+        <h4 class="h4">
+          <small>鑑賞日 <%= film.watch_date %>　評価 <%= "★" * film.point %></small>
+        </h4>
+        <h5 class="h4">
+          <%= film.comment %>
+        </h5>
+      </li>
+    <% end %>
+  </ol>
+  <% if @films.present? %>
+    <%= render partial: "pager",
+               locals: {page: @page} %>
+  <% end %>
+</section>

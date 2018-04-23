@@ -1,8 +1,12 @@
+<% @title = "ダッシュボード" %>
 <header>
   <h1>
     こんにちは<%= current_user.user_name %>さん
   </h1>
   <h2>
-    この画面はRails<%= Rails.version %>アプリ、filmArchiveのダッシュボードです
+    この画面はRails<%= Rails.version %>アプリFilmArchiveのダッシュボードです
   </h2>
 </header>
+<section>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+</section>

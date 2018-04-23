@@ -8,14 +8,14 @@ default: &default
 
 development:
   <<: *default
-  database: filmArchive_development
+  database: FilmArchive_development
 
 test:
   <<: *default
-  database: filmArchive_test
+  database: FilmArchive_test
 
 production:
   <<: *default
-  database: filmArchive_production
-  username: filmArchive
+  database: FilmArchive_production
+  username: FilmArchive
   password: <%= ENV['FILMARCHIVE_DATABASE_PASSWORD'] %>

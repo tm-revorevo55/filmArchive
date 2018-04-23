@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
-  root to: "dashboard#index"
+  # Devise
   devise_for :users
+
+  # ダッシュボード
+  root to: 'dashboard#index'
+
+  # 映画モデル
+  resources :films, only: [:index]
 end

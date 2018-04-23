@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214045931) do
+ActiveRecord::Schema.define(version: 20180416122928) do
+
+  create_table "films", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id", null: false
+    t.string "category", default: "", null: false
+    t.string "name", default: "", null: false
+    t.date "watch_date"
+    t.binary "label", limit: 16777215
+    t.string "director"
+    t.text "comment"
+    t.integer "point"
+    t.string "reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
